@@ -1,0 +1,44 @@
+{
+  "name": "ergometer-js",
+  "description": "Java script ergometer driver for concept 2 performance monitor with BLE and USB. (The PM5) Works on all major platforms using cordova and node/electron",
+  "version": "1.4.2",
+  "engines": {
+    "node": ">=5.5.0"
+  },
+  "devDependencies": {
+    "copyfiles": ">=0.2.1",
+    "typescript": "^2.6.2"
+  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "PhoneGap",
+    "cordova",
+    "ergometer",
+    "driver",
+    "concept 2",
+    "BLE",
+    "USB",
+    "HID",
+    "PM3",
+    "PM4",
+    "PM5",
+    "WebHid"
+  ],
+  "scripts": {
+    "build:api": "tsc -p api && npm run build:compress",
+    "build:compress": "uglifyjs -c --output api/lib/ergometer.min.js api/lib/ergometer.js",
+    "build:copy_api": "copyfiles -f api/lib/ergometer.js public/libs",
+    "build:copy_api_ts": "copyfiles -f api/lib/ergometer.d.ts src/typings",
+    "build:webapp": "tsc",
+    "build": "npm run build:api && npm run build:copy_api && npm run build:webapp",
+    "start": "serve public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tijmenvangulik/MobileErgometer"
+  },
+  "dependencies": {
+    "serve": "^11.3.2",
+    "uglify-js": "^3.6.7"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "system",
+    "target": "es5",
+    "sourceMap": true,
+    "outFile": "public/app.js",
+    "lib": [
+      "es5",
+      "es2015",
+      "dom"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "filesGlob": [],
+  "files": [
+    "src/typings/ergometer.d.ts",
+    "src/typings/jquery.d.ts",
+    "src/demo.ts",
+    "src/app.ts"
+  ]
+}
